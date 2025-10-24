@@ -1,0 +1,147 @@
+/*------------------------------------------------------------------
+    style.css - TechBlog
+    Versão: 1.0
+    Data: 24/10/2025
+    Autor: Robson Luis David Ferreira
+------------------------------------------------------------------*/
+
+/*=================VARIÁVEIS CSS=================*/
+
+:root {
+    --bg: #0f1720;
+    --panel: #0f1a21;
+    --card: #142026;
+    --muted: #9aa6ad;
+    --accent: #17a2ff;
+    --accent-2: #4bd1b6;
+    --glass: rgba(255,255,255,0.03);
+    --radius: 12px;
+    --max-width: 1200px;
+    --container-padding: 24px;
+    --shadow: 0 8px 24px rgba(2,6,23,0.6);
+    --text: #e7eef2;
+    --small: 14px;
+    --large: 18px;
+    --transition: 0.18s ease-in-out;
+    --card-border: rgba(255,255,255,0.03);
+}
+/* Dark mode preference fallback
+@media(prefers-color-scheme: light){
+    :root {
+        --bg:#f6f8fa;
+        --panel:#ffffff;
+        --card:#ffffff;
+        --glass: rgba(0,0,0,0.03);
+        --text:#0f1720;
+        --muted:#56606a;
+        --shadow: 0 6px 20px rgba(20,24,28,0.06);
+        --card-border: rgba(0,0,0,0.06);
+    }
+}
+*/
+/*RESET*/
+*{ box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+html, body{height: 100%;}
+
+body{
+    font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg), #081017 120%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height: 1.6;
+    padding: 32px 0;
+}
+
+/*CONTAINER*/
+.container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/*HEADER*/
+.site-header{
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 0 28px 0
+}
+
+.brand a{
+    font-weight: 700;
+    font-size: 20px;
+    color:var(--text);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.nav{
+    display: flex;
+    gap:16px;
+    margin-left: 8px;
+}
+.nav a{
+    color:var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.nav a:hover{ color:var(--text)}
+
+.header-actions{
+    margin-left: auto;
+    display: flex;
+    gap:12px;
+    align-items: center;
+}
+
+.header-actions input[type="search"]{
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    padding: 10px 12px;
+    border-radius: 10px;
+    color:var(--text);
+    width:240px;
+    outline: none;
+    transition: box-shadow var(--transition);
+}
+
+.header-actions input[type="search"]:focus{
+    box-shadow: 0 6px 20px rgba(23,162,255,0.08);
+    border-color: var(--accent);
+}
+
+.btn{
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    background: transparent;
+    color:var(--text);
+}
+
+.btn-primary{
+    background:linear-gradient(90deg, var(--accent),var(--accent-2));
+    color:#041017;
+    border:none;
+    box-shadow: 0 6px 18px rgba(23,162,255,0.08);
+}
+
+
