@@ -12,7 +12,7 @@
     --radius:10px;
     --gap:20px;
     --text:#e6eef0;
-    --card-border: rgba(255,255,255,0.03);
+    --card-border: rgba(255,255,255,0.09);
     --transition: 0.18s ease-in-out;
 }
 
@@ -39,7 +39,6 @@ html, body{
 .site-header{
     background-color: rgba(16, 28, 34, 0.45);
     backdrop-filter: blur(6px);
-    
 }
 
 .header-inner{
@@ -48,7 +47,7 @@ html, body{
     gap: 50px;
     justify-content: space-between;
     padding: 18px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .brand .logo{
@@ -119,6 +118,164 @@ html, body{
     border: none;
     box-shadow: 0 6px 18px rgba(23,162,255,0.08);
 }
+
+/*HERO / CAROUSEL*/
+.hero{
+    padding-top:36px;
+    padding-bottom:24px;
+}
+
+.carousel{
+    position: relative;
+}
+
+.carousel-track{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap:16px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.card-body{
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-body h3{
+    margin: 0 0 8px 0;
+    font-size: 15px;
+}
+
+.card-body p{
+    color:var(--muted);
+    margin:0;
+    font-size: 12px;
+}
+
+.card-body .btn{
+    margin-top: auto;
+}
+
+.carousel-btn{
+    position: absolute;    
+    top:50%;
+    transform:translateY(-50%);
+    background: rgba(0,0,0,0.1);
+    border: 1px solid var(--card-border);
+    color: var(--text);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card .btn{
+    display: inline-block;
+    margin-top: auto;
+    background: rgba(78,80,80,0.2);
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 18px;
+    box-shadow: 0 2px 8px rgba(23,162,255,0.08);
+    transition: filter 0.18s;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+
+
+    /*
+    display: inline-block;
+    margin-top: 8px;
+    background: rgba(78, 80, 80, 0.1);
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 18px;
+    box-shadow: 0 2px 8px rgba(23,162,255,0.08);
+    transition: filter 0.18s;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    */
+}
+
+.card .btn:hover,
+.card .btn:focus{
+    filter:brightness(1.15);
+    outline: none;
+}
+
+.carousel-btn.prev{
+    left: 8px;
+}
+
+.carousel-btn.next{
+    right: 8px;
+}
+
+.carousel-thumbs{
+    display: flex;
+    gap: 10px;
+    margin-top:14px;
+    justify-content: center;
+}
+
+.carousel-thumbs .thumb{
+    width:64px;
+    height: 44px;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid var(--card-border);
+    background: transparent;
+    cursor: pointer;
+}
+
+.carousel-thumbs .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-thumbs .thumb.active{
+    outline: 2px solid var(--accent);
+}
+
 
 /*
 .search input{
