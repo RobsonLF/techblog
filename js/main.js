@@ -1,72 +1,66 @@
-// js/main.js
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.carousel-track');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  const thumbs = Array.from(document.querySelectorAll('.carousel-thumbs .thumb'));
-  let current = 0;
-  let autoplayTimer = null;
-  const AUTOPLAY_MS = 5000;
+const track = document.getElementById('track');
+const carousel = document.getElementById('carousel');
+const prevBtn = carousel.querySelector('.prev');
+const nextBtn = carousel.querySelector('.next');
+let isDragging = false, startX = 0, currentTranslate = 0, prevTranslate = 0, animationID=0;
 
-  if(!track) return;
+function getCardWidth(){
+    const card = track.querySelector('.card');
+    const style = getComputedStyle(track);
+    const gap = parseInt(getComputedStyle(track).gap || 20);
+    return card.offsetWidth + gap;
+}
 
-  function updateThumbs(idx){
-    thumbs.forEach(t => t.classList.toggle('active', Number(t.dataset.index) === idx));
-  }
+function moveToIndex(index){
+    const cardWidth = getCardWidth();
+    const maxIndex = track.children.length - 1;
+    index = Math.max(0, Math.min(index, maxIndex));
+    const x = -index * cardWidth;
+    track.style.transform = `translateX(${x}px)`;
+    currentIndex = index;
+}
 
-  function showIndex(idx){
-    const slides = track.querySelectorAll('.card');
-    if(!slides.length) return;
-    if(idx < 0) idx = slides.length - 1;
-    if(idx >= slides.length) idx = 0;
-    current = idx;
-    // calcula deslocamento com a largura do primeiro slide
-    const slideWidth = slides[0].clientWidth + parseInt(getComputedStyle(track).gap || 0);
-    const scrollLeft = slideWidth * idx;
-    track.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-    updateThumbs(idx);
-  }
+let currentIndex = 0;
+prevBtn.addEventListener('click', ()=> moveToIndex(currentIndex - 1));
+nextBtn.addEventListener('click', ()=> moveToIndex(currentIndex + 1));
 
-  function next(){ showIndex(current + 1); }
-  function prev(){ showIndex(current - 1); }
+window.addEventListener('resize', ()=> moveToIndex(currentIndex));
 
-  if(nextBtn) nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
-  if(prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
+/* Dragging for desktop/touch */
+track.addEventListener('pointerdown', startDrag);
+track.addEventListener('pointermove', onDrag);
+track.addEventListener('pointerup', endDrag);
+track.addEventListener('pointerleave', endDrag);
+track.addEventListener('pointercancel', endDrag);
 
-  thumbs.forEach(t => {
-    t.addEventListener('click', () => {
-      const idx = Number(t.dataset.index || 0);
-      showIndex(idx);
-      resetAutoplay();
-    });
-  });
+function startDrag(e){
+    isDragging = true;
+    startX = e.clientX;
+    track.style.transition = 'none';
+}
+function onDrag(e){
+    if(!isDragging) return;
+    const dx = e.clientX - startX;
+    track.style.transform = `translateX(${ -currentIndex * getCardWidth() + dx }px)`;
+}
+function endDrag(e){
+    if(!isDragging) return;
+    isDragging = false;
+    const dx = (e.clientX || 0) - startX;
+    const threshold = getCardWidth() / 4;
+    if (dx < -threshold) moveToIndex(currentIndex + 1);
+    else if (dx > threshold) moveToIndex(currentIndex - 1);
+    else moveToIndex(currentIndex);
+    track.style.transition = '';
+}
 
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'ArrowLeft'){ prev(); resetAutoplay(); }
-    if(e.key === 'ArrowRight'){ next(); resetAutoplay(); }
-  });
-
-  function startAutoplay(){
-    stopAutoplay();
-    autoplayTimer = setInterval(() => next(), AUTOPLAY_MS);
-  }
-  function stopAutoplay(){ if(autoplayTimer){ clearInterval(autoplayTimer); autoplayTimer = null; } }
-  function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
-
-  const carousel = document.getElementById('mainCarousel');
-  if(carousel){
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
-  }
-
-  // atualiza posição se redimensionar
-  let resizeTimer = null;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => showIndex(current), 150);
-  });
-
-  // iniciar
-  showIndex(0);
-  startAutoplay();
+/* Keyboard */
+window.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowLeft') moveToIndex(currentIndex - 1);
+    if(e.key === 'ArrowRight') moveToIndex(currentIndex + 1);
 });
+
+/* Autoplay (pauses on hover) */
+let autoplay = setInterval(()=> moveToIndex(currentIndex + 1), 5000);
+carousel.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+carousel.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> moveToIndex(currentIndex + 1), 5000));
