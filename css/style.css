@@ -12,26 +12,75 @@
     --panel:#122023;
     --muted:#98a0a6;
     --accent:#16a5ff;
+    --accent-2: #4bd1b6;
     --card:#0f1a1b;
     --radius:10px;
     --gap:20px;
     --text:#e6eef0;
+    --card-border: rgba(255,255,255,0.09);
+    --transition: 0.18s ease-in-out;
 }
 
 /* ...existing code... */
 *{box-sizing:border-box}
 /* substituído: smooth-scroll inválido -> scroll-behavior */
-html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Helvetica,Arial;scroll-behavior:smooth;background:linear-gradient(180deg,#051617 0%, #072023 60%);color:var(--text)}
-.container{max-width:1100px;margin:0 auto;padding:24px}
+
+html,body{
+    height:100%;
+    margin:0;
+    font-family:Inter,Segoe UI,Helvetica,Arial;
+    scroll-behavior:smooth;
+    background:linear-gradient(180deg, rgb(16,28,34)0%, #101c22 60%);
+    color:var(--text);
+}
+
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:24px;
+}
 
 /* Header */
-.site-header{background:rgba(7,18,20,0.45);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
-.header-inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:18px 0}
-.brand .logo{color:var(--accent);font-weight:700;font-size:20px}
-.main-nav{display:flex;gap:18px}
+.site-header{
+    background:rgba(16,28,34,0.45);
+    backdrop-filter:blur(6px);
+}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    justify-content:space-between;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+.material-symbols-outlined{
+    font-variation-settings: 
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    color: var(--accent);
+    padding-right: 10px;
+}
+
+.brand .logo{
+    color:var(--text);
+    font-weight:600;
+    font-size:30px;
+}
+
+.main-nav{
+    display:flex;
+    gap:18px
+}
+
+
+
 .main-nav a{color:var(--muted);text-decoration:none;font-size:14px}
 .header-actions{display:flex;gap:12px;align-items:center}
-.search input{background:#0b1718;border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:8px 12px;border-radius:8px;width:220px}
+.search input{background:#283339;border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:8px 12px;border-radius:8px;width:220px}
 .btn{padding:8px 14px;border-radius:8px;border:0;cursor:pointer}
 .btn.primary{background:linear-gradient(180deg,var(--accent) 0%, #0fb3ff 100%);color:#022232;font-weight:600}
 
