@@ -39,15 +39,16 @@ html, body{
 .site-header{
     background-color: rgba(16, 28, 34, 0.45);
     backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+    
 }
 
 .header-inner{
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 50px;
     justify-content: space-between;
     padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .brand .logo{
@@ -65,6 +66,7 @@ html, body{
         'opsz' 24;
     color: var(--accent);
     padding-right: 10px;
+    
 }
 
 .main-nav{
@@ -113,7 +115,7 @@ html, body{
 
 .btn.primary{
     background: linear-gradient(90deg,var(--accent) 0%, var(--accent-2) 100%);
-    color:var(--text)
+    color:var(--text);
     border: none;
     box-shadow: 0 6px 18px rgba(23,162,255,0.08);
 }
