@@ -167,13 +167,14 @@ html, body{
 }
 
 .card-body h3{
-    margin: 0 0 8px 0;
+    margin: 15px 0 10px 0;
     font-size: 15px;
 }
 
 .card-body p{
     color:var(--muted);
     margin:0;
+    padding-bottom: 20px;
     font-size: 12px;
 }
 
@@ -198,9 +199,10 @@ html, body{
 }
 
 .card .btn{
-    display: inline-block;
+    display: block;
+    width: 100%;
     margin-top: auto;
-    background: rgba(78,80,80,0.2);
+    background: rgba(78,80,80,0.3);
     color: var(--text);
     border: none;
     border-radius: 6px;
