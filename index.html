@@ -9,55 +9,85 @@
  
 </head>
 <body>
-    <header class="site-header">
+<header class="site-header">
         <div class="container header-inner">
             <div class="brand">
-                <a href="index.html">TechBlog</a>
+                <div class="logo">TechBlog</div>
             </div>
-            <nav class="nav">
+            <nav class="main-nav">
                 <a href="#">Ferramentas</a>
                 <a href="#">Bibliotecas</a>
                 <a href="#">Tutoriais</a>
-                <a href="#">Sobre</a>
             </nav>
             <div class="header-actions">
-                <input id="searchInput" type="search" placeholder="Pesquisar" aria-label="Pesquisar"/>
+                <div class="search">
+                    <input type="search" placeholder="Search" aria-label="Pesquisar"/>
+                </div>
                 <button class="btn primary">Assinar Newsletter</button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero-grid" id="featureGrid">
+        <section class="carousel-section">
+            <h2>Últimos artigos</h2>
 
-        </section>
-        <section class="categories">
-            <h3>Explore por Categoria</h3>
-            <div class="category-list" id="categoryList">
+            <div class="carousel" id="carousel">
+                <button class="carousel-btn prev" aria-label="Anterior">&lt;</button>
 
-            </div>
-        </section>
+                <div class="carousel-track-wrap">
+                    <ul class="carousel-track" id="track">
+                        <!-- Card 1 -->
+                        <li class="card">
+                            <div class="card-media grad1"></div>
+                            <h3>5 Ferramentas VS Code que Vão Mudar Seu Fluxo</h3>
+                            <p class="card-desc">Descubra extensões e configurações que otimizarão seu ambiente de desenvolvimento.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
 
-        <section class="posts-recent">
-            <h3>Posts Recentes</h3>
-            <div class="posts-list" id="postsList">
+                        <!-- Card 2 -->
+                        <li class="card">
+                            <div class="card-media grad2"></div>
+                            <h3>React vs. Vue: Qual Escolher em 2024?</h3>
+                            <p class="card-desc">Uma análise comparativa para ajudar você a decidir qual framework se encaixa no seu projeto.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
 
+                        <!-- Card 3 -->
+                        <li class="card">
+                            <div class="card-media grad3"></div>
+                            <h3>O Guia Definitivo para Flexbox</h3>
+                            <p class="card-desc">Aprenda a dominar o layout flexível com exemplos práticos e dicas úteis.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+
+                        <!-- Card 4 -->
+                        <li class="card">
+                            <div class="card-media grad4"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                        <li class="card">
+                            <div class="card-media grad4"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                        <li class="card">
+                            <div class="card-media grad5"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Próximo">&gt;</button>
             </div>
         </section>
     </main>
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-left">
-                <strong>TechBlog</strong> <span> &#169 2025 TechBlog. Todos os direitos reservados.</span>
-            </div>
-            <div class="footer-right">
-                <a href="#">Sobre Nós</a>
-                <a href="#">Contato</a>
-                <a href="#">Política de Privacidade</a>
-            </div>
-        </div>
-    </footer>
-    <script src="js/posts.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 </html>
