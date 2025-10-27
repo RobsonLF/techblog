@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+
+:root {
+    --bg:#0f262a;
+    --panel:#122023;
+    --muted:#98a0a6;
+    --accent:#16a5ff;
+    --card:#0f1a1b;
+    --radius:10px;
+    --gap:20px;
+    --text:#e6eef0;
+}
+
+*{
+    box-sizing: border-box
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family: Inter, Segoe UI, Helvetica, Arial;
+    /*smooth-scroll:always;*/
+    background: linear-gradient(180deg, #051617 0%, #072023 60%);
+    color: var(--text);
+}
+
+.material-symbols-outlined{
+    font-variation-settings: 
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
