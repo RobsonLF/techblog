@@ -76,9 +76,13 @@ html, body{
 }
 
 .header-actions{
+    margin-left: auto;
     display: flex;
     gap: 12px;
     align-items: center;
+}
+.header-actions input[type:"search"]{
+    
 }
 
 .search input{
