@@ -145,25 +145,34 @@ html,body{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:linear-gradient(180deg, rgba(20,36,42,0.9), rgba(6,14,16,0.75));
+    /*background:linear-gradient(180deg, rgba(20,36,42,0.9), rgba(6,14,16,0.75));*/
+    background: rgba(255,255,255,0.03);
     color:var(--text);
-    border:1px solid rgba(255,255,255,0.04);
-    width:44px;
-    height:44px;
-    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.08);
+    width:40px;
+    height:40px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:18px;
+    font-size:16px;
     cursor:pointer;
-    box-shadow:0 6px 18px rgba(2,8,10,0.6);
-    transition:transform .12s ease, opacity .12s ease;
-    z-index:5;
-    opacity:0.95;
+    /*box-shadow:0 6px 18px rgba(2,8,10,0.6);*/
+    /*transition:transform .12s ease, opacity .12s ease;*/
+    transition: all 0.2s ease;
+    /*z-index:5;*/
+    opacity:0.5;
 }
-.carousel-btn:hover{transform:translateY(-50%) scale(1.04);opacity:1}
-.carousel .prev{left:8px}
-.carousel .next{right:8px}
+.carousel-btn:hover{
+    opacity: 1;
+    background: rgba(255,255,255,0.08);
+    transform:translateY(-50%) scale(1.05);
+}
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+.carousel .prev{left:1px}
+.carousel .next{right:1px}
 
 /* Responsive */
 @media (max-width:900px){
