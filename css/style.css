@@ -19,6 +19,7 @@
     --text:#e6eef0;
     --card-border: rgba(255,255,255,0.09);
     --transition: 0.18s ease-in-out;
+    --card-width: 250px;
 }
 
 /* ...existing code... */
@@ -125,27 +126,130 @@ html,body{
 }
 
 /* Carousel */
-.carousel-section h2{color:var(--text);margin:14px 0}
-.carousel{position:relative;display:flex;align-items:center;padding:0 48px} /* espaço para botões */
-.carousel-track-wrap{overflow:hidden;width:100%}
-.carousel-track{display:flex;gap:var(--gap);padding:18px 6px;margin:0;list-style:none;transition:transform .35s ease}
-.card{background:var(--panel);min-width:240px;border-radius:10px;padding:16px;flex:0 0 260px;color:var(--text);box-shadow:0 6px 18px rgba(2,8,10,0.6)}
-.card-media{height:110px;border-radius:8px;margin-bottom:12px;background-size:cover;background-position:center}
+
+.carousel{
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:0;
+} 
+
+/* espaço para botões */
+
+.carousel-track-wrap{
+    overflow:hidden;
+    width:100%;
+    margin: 0 50px;
+    z-index: 1;
+}
+
+.carousel-track{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns: var(--card-width);
+    gap: var(--gap);
+    transition:transform .35s ease;
+    z-index: 1;
+    padding: 10px;
+}
+
+.card{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width:var(--card-width);
+    background: #1C2327;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    /*
+    background:var(--panel);
+    min-width:100%;
+    border-radius:10px;
+    flex:0 0 260px;
+    color:var(--text);
+    box-shadow:0 6px 18px rgba(2,8,10,0.6)
+*/
+}
+
+.card-media{
+    width: 100%;
+    height:150px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius);
+    
+    /*
+    border-radius:8px;
+    background-size:cover;
+    background-position:center*/
+}
+
+.card-body{
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 .grad1{background:linear-gradient(135deg,#5a5bd9,#e357d9)}
 .grad2{background:linear-gradient(135deg,#70c57d,#2bd3e6)}
 .grad3{background:linear-gradient(135deg,#6dd3ff,#7b9cff)}
 .grad4{background:linear-gradient(135deg,#ff8c3b,#ffc36b)}
 .grad5{background:linear-gradient(135deg,#ff5e7e,#ff9a8a)}
-.card h3{font-size:16px;margin:6px 0 8px}
-.card-desc{color:var(--muted);font-size:13px;line-height:1.3;height:44px;overflow:hidden}
-.card-cta{display:inline-block;margin-top:12px;background:#0b1718;padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600}
+
+.card h3{
+    font-size:16px;
+    margin:6px 0 8px;
+    padding:16px;
+}
+
+.card-desc{
+    padding:0 16px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.3;
+    height:44px;
+    overflow:hidden
+}
+
+.card-cta{
+    display:inline-block;
+    margin-top:12px;
+    background:#0b1718;
+    padding:8px 12px;
+    border-radius:8px;
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:600
+}
 
 /* Buttons - estilo melhorado */
 .carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+    background:rgba(255,255,255,0.02);
+    color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.06);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    opacity: 0.6;
+    z-index: 40;
+    backdrop-filter: blur(6px);
+
+    /*
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    /*background:linear-gradient(180deg, rgba(20,36,42,0.9), rgba(6,14,16,0.75));*/
+    background:linear-gradient(180deg, rgba(20,36,42,0.9), rgba(6,14,16,0.75));
     background: rgba(255,255,255,0.03);
     color:var(--text);
     border:1px solid rgba(255,255,255,0.08);
@@ -157,11 +261,12 @@ html,body{
     justify-content:center;
     font-size:16px;
     cursor:pointer;
-    /*box-shadow:0 6px 18px rgba(2,8,10,0.6);*/
-    /*transition:transform .12s ease, opacity .12s ease;*/
+    box-shadow:0 6px 18px rgba(2,8,10,0.6);
+    transition:transform .12s ease, opacity .12s ease;
     transition: all 0.2s ease;
-    /*z-index:5;*/
+    z-index:5;
     opacity:0.5;
+    */
 }
 .carousel-btn:hover{
     opacity: 1;
@@ -171,7 +276,10 @@ html,body{
 .carousel-btn:active {
     transform: translateY(-50%) scale(0.95);
 }
-.carousel .prev{left:1px}
+.carousel .prev{
+    /*left:1px;*/
+    margin-right: 5px;
+}
 .carousel .next{right:1px}
 
 /* Responsive */
