@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechBlog - artigos sobre ferramentas bibliotecas e tutoriais para desenvolvedores." >
+    <title>TechBlog</title>
+    <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+ 
+</head>
+<body>
+<header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="logo"><span class="material-symbols-outlined !text-4x1">hub</span>TechBlog</div>
+            </div>
+            <nav class="main-nav">
+                <a href="#">Ferramentas</a>
+                <a href="#">Bibliotecas</a>
+                <a href="#">Tutoriais</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search">
+                    <input id="searchInput" type="search" placeholder="Search" aria-label="Pesquisar"/>
+                </div>
+                <button class="btn primary">Assinar Newsletter</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="carousel-section">
+
+            <div class="carousel" id="carousel">
+                <button class="carousel-btn prev" aria-label="Anterior">&lt;</button>
+
+                <div class="carousel-track-wrap">
+                    <ul class="carousel-track" id="track">
+                        <!-- Card 1 -->
+                        <li class="card">
+                            <div class="card-media grad1"></div>
+                            <h3>5 Ferramentas VS Code que Vão Mudar Seu Fluxo</h3>
+                            <p class="card-desc">Descubra extensões e configurações que otimizarão seu ambiente de desenvolvimento.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+
+                        <!-- Card 2 -->
+                        <li class="card">
+                            <div class="card-media grad2"></div>
+                            <h3>React vs. Vue: Qual Escolher em 2024?</h3>
+                            <p class="card-desc">Uma análise comparativa para ajudar você a decidir qual framework se encaixa no seu projeto.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+
+                        <!-- Card 3 -->
+                        <li class="card">
+                            <div class="card-media grad3"></div>
+                            <h3>O Guia Definitivo para Flexbox</h3>
+                            <p class="card-desc">Aprenda a dominar o layout flexível com exemplos práticos e dicas úteis.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+
+                        <!-- Card 4 -->
+                        <li class="card">
+                            <div class="card-media grad4"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                        <li class="card">
+                            <div class="card-media grad4"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                        <li class="card">
+                            <div class="card-media grad5"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                        <li class="card">
+                            <div class="card-media grad5"></div>
+                            <h3>Explorando as Melhores Bibliotecas de UI</h3>
+                            <p class="card-desc">Conheça as bibliotecas que podem acelerar seu desenvolvimento e melhorar a experiência do usuário.</p>
+                            <a class="card-cta" href="#">Leia Mais</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Próximo">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+<!--
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+    <header class="site-header">
+        <span class="material-symbols-outlined !text-4xl">hub</span>
+
+    </header>
+-->
