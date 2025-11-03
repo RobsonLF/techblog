@@ -78,13 +78,17 @@ html,body{
 .main-nav{
     display:flex;
     gap:18px;
-    padding-left: 35px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
 }
 
 .main-nav a{
     color:var(--muted);
     text-decoration:none;
-    font-size:17px;
+    font-size:14px;
     padding-left: 15px;
 }
 
@@ -282,6 +286,8 @@ html,body{
 .article-count {
     font-size: 14px;
     color: var(--muted);
+    display: inline-block;
+    margin-top: auto;
 }
 
 /* Responsivo */
