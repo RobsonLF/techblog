@@ -448,8 +448,8 @@ html,body{
 /***************************************************************************************************/
 /*CSS para pagina de ferramentas, bibliotecas html e java*/
 .tools-section{ margin:48px 0 80px; }
-.section-title{ font-size:28px; color:var(--text); margin:6px 0 6px; font-weight:700; }
-.section-subtitle{ color:var(--muted); margin-bottom:20px; }
+.section-title-tool{ font-size:36px; color:var(--accent); margin:6px 0 30px; font-weight:700; }
+.section-subtitle{ color:var(--muted); margin-bottom:40px;font-size: 18px; }
 
 .tools-grid{
     display:grid;
