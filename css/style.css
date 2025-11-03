@@ -7,6 +7,8 @@
 
 /*=================VARIÁVEIS CSS=================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
 :root{
     --bg:rgba(16,28,34,0.45);
     --panel:#122023;
@@ -19,6 +21,7 @@
     --text:#e6eef0;
     --card-border: rgba(255,255,255,0.09);
     --transition: 0.18s ease-in-out;
+    --font-artigos: "Newsreader"
 }
 
 *{box-sizing:border-box}
@@ -414,6 +417,65 @@ html,body{
     color: var(--text);
 }
 
+.social-icons{
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.ajusting{
+  padding: 9px 1px 9px 2px;
+}
+
+
+/*
+}
+.social{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.social-icons{
+  display: flex;
+  gap: 16px;
+}
+.social img{
+  filter: brightness(0) invert(1);
+  transition: filter 0,2s;
+}
+.social img:hover{
+  filter: brightness(0.8) invert(0.7);
+}
+.ajustimg{
+  padding: 9px 2px 9px 2px;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsivo */
 @media (max-width: 768px) {
     .posts-grid {
@@ -432,7 +494,6 @@ html,body{
     }
 }
 
-
 /* Responsive */
 @media (max-width:900px){
     .main-nav{display:none}
@@ -448,8 +509,8 @@ html,body{
 /***************************************************************************************************/
 /*CSS para pagina de ferramentas, bibliotecas html e java*/
 .tools-section{ margin:48px 0 80px; }
-.section-title-tool{ font-size:36px; color:var(--accent); margin:6px 0 30px; font-weight:700; }
-.section-subtitle{ color:var(--muted); margin-bottom:40px;font-size: 18px; }
+.section-title-tool{ font-size:40px; color:var(--accent); margin:6px 0 30px; font-weight:700;font-family: var(--font-artigos); }
+.section-subtitle{ color:var(--muted); margin-bottom:40px;font-size: 18px;font-family: var(--font-artigos); }
 
 .tools-grid{
     display:grid;
@@ -474,8 +535,8 @@ html,body{
 .tool-image{ width:100%; height:160px; object-fit:cover; display:block; }
 
 .tool-body{ padding:18px; display:flex; flex-direction:column; gap:10px; flex:1; }
-.tool-title{ font-size:16px; margin:0; color:var(--text); font-weight:700; }
-.tool-excerpt{ margin:0; color:var(--muted); font-size:14px; line-height:1.45; }
+.tool-title{ font-size:20px; margin:0; color:var(--text); font-weight:700; font-family: var(--font-artigos);}
+.tool-excerpt{ margin:0; color:var(--muted); font-size:16px; line-height:1.45; }
 
 /* pagination */
 .pagination-wrap{ display:flex; align-items:center; gap:12px; justify-content:center; margin-top:28px; }
@@ -501,6 +562,9 @@ html,body{
     gap: 24px;
     align-items: start;
 }
+
+
+
 
 /* responsivo: reduz para 2 e 1 colunas em telas menores */
 @media (max-width: 900px) {
