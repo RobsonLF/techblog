@@ -25,7 +25,7 @@
         </div>
     </header>
 
-    <main class="artic">
+    <main class="main-artic">
         <article>
             <div class="meta">
                 <h1>5 Extensões Essenciais do VS Code para Iniciantes</h1>
@@ -33,36 +33,61 @@
                     Postado em 5 de Novembro, 2025 por <strong>Robson Ferreira</strong> - 10 min de leitura
                 </p>
             </div>
-            <div class="content-artic">
-                <img src="https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-popular.png" alt="Extensões do Visual Studio Code" class="featured-img">
-                <p>
-                    O Visual Studio Code é um dos editores de código mais populares entre desenvolvedores — e com razão. 
-                    Sua flexibilidade, velocidade e enorme biblioteca de extensões o tornam uma ferramenta ideal tanto para iniciantes 
-                    quanto para profissionais experientes.
-                </p>
-                <p>
-                    Neste artigo, você vai conhecer cinco extensões que podem transformar o seu fluxo de trabalho e ajudar 
-                    a dar os primeiros passos no desenvolvimento de forma mais eficiente e organizada.
-                </p>
+            <div class="artic">
+                <div class="introduction">
+                    <img src="https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-popular.png" alt="Extensões do Visual Studio Code" class="featured-img">
+                    <p>
+                        O Visual Studio Code é um dos editores de código mais populares entre desenvolvedores — e com razão. 
+                        Sua flexibilidade, velocidade e enorme biblioteca de extensões o tornam uma ferramenta ideal tanto para iniciantes 
+                        quanto para profissionais experientes.
+                    </p>
+                    <p>
+                        Neste artigo, você vai conhecer cinco extensões que podem transformar o seu fluxo de trabalho e ajudar 
+                        a dar os primeiros passos no desenvolvimento de forma mais eficiente e organizada.
+                    </p>
+                </div>
+                <section class="content-artic">
+                    <h2>1. Live Server</h2>
+                        <img src="https://github.com/ritwickdey/vscode-live-server/raw/HEAD/images/Screenshot/vscode-live-server-animated-demo.gif" 
+                        alt="Demonstração do Live Server" 
+                        class="img-section" />
+                    <p>
+                        O <strong>Live Server</strong> é indispensável para quem está começando com HTML, CSS e JavaScript. 
+                        Ele cria um servidor local com atualização automática do navegador — ou seja, cada vez que você salva um arquivo, 
+                        a página recarrega sozinha.
+                    </p>
+                    <p> Exemplo de uso:<br>
+                        1. Instale o Live Server na aba de Extensões (Ctrl + Shift + X)<br>
+                        2. Clique com o botão direito no seu arquivo HTML<br>
+                        3. Selecione "Open with Live Server"
+                    </p>
+                    <p>
+                        Isso elimina o trabalho manual de atualizar o navegador e aumenta significativamente a produtividade durante o aprendizado.
+                    </p>
+                </section>
+                <section class="content-artic">
+                    <h2>2. Prettier - Code Formatter</h2>
+                        <img src="https://www.thetombomb.com/images/ForPosts/prettier-in-action.gif" 
+                        alt="Prettier VS Code" 
+                        class="img-section" />
+                    <p>
+                        O <strong>Prettier</strong> é o melhor amigo de quem quer código limpo e padronizado. 
+                        Ele formata automaticamente seu código seguindo boas práticas, eliminando problemas como 
+                        espaçamento inconsistente ou indentação incorreta.
+                    </p>
 
-                <h2>1. Live Server</h2>
-                    <img src="https://github.com/ritwickdey/vscode-live-server/raw/HEAD/images/Screenshot/vscode-live-server-animated-demo.gif" 
-                    alt="Demonstração do Live Server" 
-                    class="img-section" />
-                <p>
-                    O <strong>Live Server</strong> é indispensável para quem está começando com HTML, CSS e JavaScript. 
-                    Ele cria um servidor local com atualização automática do navegador — ou seja, cada vez que você salva um arquivo, 
-                    a página recarrega sozinha.
-                </p>
-                <pre><code> Exemplo de uso
-    1. Instale o Live Server na aba de Extensões (Ctrl + Shift + X)
-    2. Clique com o botão direito no seu arquivo HTML
-    3. Selecione "Open with Live Server"
-                </code></pre>
-                <p>
-                    Isso elimina o trabalho manual de atualizar o navegador e aumenta significativamente a produtividade durante o aprendizado.
-                </p>
+                    <p>
+                        Exemplo de configuração no settings.json<br>
+                        "editor.defaultFormatter": "esbenp.prettier-vscode",<br>
+                        "editor.formatOnSave": true<br>
+                    </p>
 
+                    <p>
+                        Assim, toda vez que você salvar um arquivo, o Prettier ajusta a formatação automaticamente. 
+                        Ideal para estudantes que ainda estão se acostumando com a estrutura do código.
+                    </p>
+
+                </section>
             </div>
         </article>
     </main>
