@@ -543,10 +543,11 @@ html,body{
 
 p{
     padding:5px 0px 10px 0px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     color: var(--text);
     margin-bottom: 12px;
+    font-weight: 400;
 
 }
 .meta p{
