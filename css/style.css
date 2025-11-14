@@ -169,6 +169,7 @@ html,body{
     display: flex;
     flex-direction: column;
     min-width: 100%;
+    
     background:var(--card);
     border-radius:10px;
     height: 370px;
